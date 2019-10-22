@@ -6,7 +6,7 @@
 
 class Input {
 public:
-	void beginNewFrame();
+	void beginNewFrame(); //Called at beginning of each new frame to reset processed key presses
 	void keyUpEvent(const SDL_Event& event);
 	void keyDownEvent(const SDL_Event& event);
 	

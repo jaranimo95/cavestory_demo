@@ -91,8 +91,9 @@
 				929B0719235FA03F00F3C99A /* game.h */,
 				929B071C235FA43900F3C99A /* input.h */,
 			);
-			path = headers;
-			sourceTree = "<group>";
+			name = headers;
+			path = source/headers;
+			sourceTree = SOURCE_ROOT;
 		};
 		929B0715235F98FD00F3C99A /* src */ = {
 			isa = PBXGroup;
@@ -102,8 +103,9 @@
 				929B071A235FA10C00F3C99A /* game.cpp */,
 				929B071D235FA57300F3C99A /* input.cpp */,
 			);
-			path = src;
-			sourceTree = "<group>";
+			name = src;
+			path = source/src;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -222,6 +224,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = source/headers;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -275,6 +278,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = source/headers;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

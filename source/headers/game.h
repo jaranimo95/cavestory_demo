@@ -5,7 +5,8 @@
  - Holds all logic for our main game loop
  */
 
-#include "animatedsprite.h"
+#include "player.h"
+#include "level.h"
 
 class Graphics;
 
@@ -13,6 +14,7 @@ class Game {
 public:
 	Game();
 	~Game();
+	
 private:
 	
 	/*
@@ -33,7 +35,8 @@ private:
 	 */
 	void update(float elapsedTime);
 	
-	AnimatedSprite _player;
+	Player _player;
+	Level _level;
 };
 
 #endif /* game_h */

@@ -16,6 +16,13 @@ namespace globals {
 	const float SPRITE_SCALE = 2.0f;
 }
 
+enum Direction {
+	LEFT,
+	RIGHT,
+	UP,
+	DOWN
+};
+
 struct Vector2 {
 	int x,y;
 	Vector2() :
@@ -24,7 +31,7 @@ struct Vector2 {
 	Vector2(int x, int y) :
 		x(x), y(y)
 	{}
-	Vector2 Zero() {
+	Vector2 zero() {
 		return Vector2(0,0);
 	}
 };

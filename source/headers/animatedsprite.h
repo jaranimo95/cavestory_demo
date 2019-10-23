@@ -17,13 +17,21 @@ class Graphics;
 class AnimatedSprite : public Sprite {
 public:
 	AnimatedSprite();
-	AnimatedSprite(Graphics &graphics, const std::string &filePath, int sourceX, int sourceY, int width, int height, float posX, float posY, float timeToUpdate);
+	AnimatedSprite(Graphics &graphics,
+				   const std::string &filePath,
+				   int sourceX, int sourceY,
+				   int width,
+				   int height,
+				   float posX,
+				   float posY,
+				   float timeToUpdate);
 	
 	/*
 	 * void playAnimation
 	 * Plays animation provided if it's not already playing
 	 */
-	void playAnimation(std::string animation, bool once = false);
+	void playAnimation(std::string animation,
+					   bool once = false);
 	
 	/*
 	 * void update
@@ -35,13 +43,10 @@ public:
 	 * void draw
 	 * Draws sprite on screen
 	 */
-	void draw(Graphics &graphics, int x, int y);
+	void draw(Graphics &graphics,
+			  int x,
+			  int y);
 	
-	/*
-	 * void setupAnimations
-	 * A required function that sets up all animations for the sprite
-	 */
-	virtual void setupAnimations();
 	
 protected:
 	double _timeToUpdate;
@@ -52,7 +57,13 @@ protected:
 	 * void addAnimation
 	 * Adds an animation to the map of animations for the sprite
 	 */
-	void addAnimation(int frames, int x, int y, std::string name, int width, int height, Vector2 offset);
+	void addAnimation(int frames,
+					  int x,
+					  int y,
+					  std::string name,
+					  int width,
+					  int height,
+					  Vector2 offset);
 	
 	/*
 	 * void resetAnimations
@@ -76,7 +87,13 @@ protected:
 	 * void animationDone
 	 * Logic that happens when an animation ends
 	 */
-	void virtual animationDone(std::string currentAnimation);
+	void virtual animationDone(std::string currentAnimation) = 0;
+	
+	/*
+	 * void setupAnimations
+	 * A required function that sets up all animations for the sprite
+	 */
+	virtual void setupAnimations() = 0;
 	
 	
 private:

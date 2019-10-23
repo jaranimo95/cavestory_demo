@@ -29,7 +29,9 @@ public:
 	 * sourceRectangle: what to draw to the screen
 	 * destinationRectangle: where to draw the sourceRectangle on the screen
 	 */
-	void blitSurface(SDL_Texture* source, SDL_Rect* sourceRectangle, SDL_Rect* destinationRectangle);
+	void blitSurface(SDL_Texture* source,
+					 SDL_Rect* sourceRectangle,
+					 SDL_Rect* destinationRectangle);
 	
 	/* void flip
 	 * Renders everything on the screen

@@ -23,7 +23,7 @@ Sprite::Sprite(Graphics &graphics, const std::string &filePath, int sourceX, int
 Sprite::~Sprite() {}
 
 void Sprite::draw(Graphics &graphics, int x, int y) {
-	SDL_Rect destinationRectangle = {x, y, this->_sourceRect.w*globals::SPRITE_SCALE, this->_sourceRect.h*globals::SPRITE_SCALE};
+	SDL_Rect destinationRectangle = {x, y, static_cast<int>(this->_sourceRect.w*globals::SPRITE_SCALE), static_cast<int>(this->_sourceRect.h*globals::SPRITE_SCALE)};
 	graphics.blitSurface(this->_spriteSheet, &this->_sourceRect, &destinationRectangle);
 }
 

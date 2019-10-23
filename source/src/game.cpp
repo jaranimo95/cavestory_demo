@@ -1,12 +1,6 @@
-#include <SDL2/SDL.h>
-
 #include "game.h"
 #include "graphics.h"
 #include "input.h"
-
-/*  Game Class
- - Holds all logic for our main game loop
-*/
 
 namespace {
 	const int FPS = 50;
@@ -26,6 +20,8 @@ void Game::gameLoop() {
 	Graphics graphics;
 	Input input;
 	SDL_Event event;
+	
+	this->_player = Sprite(graphics, "./content/sprites/MyChar.png", 0, 0, 16, 16, 100, 100);
 	
 	int LAST_UPDATE_TIME = SDL_GetTicks();
 	//Start Game Loop
@@ -53,11 +49,17 @@ void Game::gameLoop() {
 		int ELAP_TIME_MS = CURR_TIME_MS - LAST_UPDATE_TIME;
 		this->update(std::min(ELAP_TIME_MS, MAX_FRAME_TIME));
 		LAST_UPDATE_TIME = CURR_TIME_MS;
+		
+		this->draw(graphics);
 	}
 }
 
 void Game::draw(Graphics &graphics) {
+	graphics.clear();
 	
+	this->_player.draw(graphics, 100, 100);
+	
+	graphics.flip();
 }
 
 void Game::update(float elapsedTime) {

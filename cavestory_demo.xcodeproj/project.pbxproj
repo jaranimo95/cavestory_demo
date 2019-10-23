@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9286B67E235FB44C006E3FA6 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9286B67D235FB44C006E3FA6 /* SDL2_image.framework */; };
+		9286B681235FC8E1006E3FA6 /* sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9286B680235FC8E1006E3FA6 /* sprite.cpp */; };
 		929B070A235F913C00F3C99A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929B0709235F913C00F3C99A /* main.cpp */; };
 		929B0712235F916F00F3C99A /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929B0711235F916E00F3C99A /* SDL2.framework */; };
 		929B0718235F993B00F3C99A /* graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929B0716235F993B00F3C99A /* graphics.cpp */; };
@@ -27,13 +29,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9286B67C235FB2C2006E3FA6 /* MyChar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MyChar.png; sourceTree = "<group>"; };
+		9286B67D235FB44C006E3FA6 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
+		9286B67F235FC7C5006E3FA6 /* sprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sprite.h; sourceTree = "<group>"; };
+		9286B680235FC8E1006E3FA6 /* sprite.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sprite.cpp; sourceTree = "<group>"; };
+		9286B682235FD373006E3FA6 /* globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
 		929B0706235F913C00F3C99A /* cavestory_demo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = cavestory_demo; sourceTree = BUILT_PRODUCTS_DIR; };
 		929B0709235F913C00F3C99A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		929B0711235F916E00F3C99A /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		929B0716235F993B00F3C99A /* graphics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = graphics.cpp; sourceTree = "<group>"; };
 		929B0717235F993B00F3C99A /* graphics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = graphics.h; sourceTree = "<group>"; };
 		929B0719235FA03F00F3C99A /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
-		929B071A235FA10C00F3C99A /* game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = game.cpp; sourceTree = "<group>"; };
+		929B071A235FA10C00F3C99A /* game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = game.cpp; path = source/src/game.cpp; sourceTree = SOURCE_ROOT; };
 		929B071C235FA43900F3C99A /* input.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = input.h; sourceTree = "<group>"; };
 		929B071D235FA57300F3C99A /* input.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = input.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -43,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9286B67E235FB44C006E3FA6 /* SDL2_image.framework in Frameworks */,
 				929B0712235F916F00F3C99A /* SDL2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,9 +58,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9286B67A235FB13D006E3FA6 /* content */ = {
+			isa = PBXGroup;
+			children = (
+				9286B67B235FB148006E3FA6 /* sprites */,
+			);
+			path = content;
+			sourceTree = "<group>";
+		};
+		9286B67B235FB148006E3FA6 /* sprites */ = {
+			isa = PBXGroup;
+			children = (
+				9286B67C235FB2C2006E3FA6 /* MyChar.png */,
+			);
+			path = sprites;
+			sourceTree = "<group>";
+		};
 		929B06FD235F913C00F3C99A = {
 			isa = PBXGroup;
 			children = (
+				9286B67A235FB13D006E3FA6 /* content */,
 				929B0708235F913C00F3C99A /* source */,
 				929B0707235F913C00F3C99A /* Products */,
 				929B0710235F916E00F3C99A /* Frameworks */,
@@ -79,6 +104,7 @@
 		929B0710235F916E00F3C99A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9286B67D235FB44C006E3FA6 /* SDL2_image.framework */,
 				929B0711235F916E00F3C99A /* SDL2.framework */,
 			);
 			name = Frameworks;
@@ -90,6 +116,8 @@
 				929B0717235F993B00F3C99A /* graphics.h */,
 				929B0719235FA03F00F3C99A /* game.h */,
 				929B071C235FA43900F3C99A /* input.h */,
+				9286B67F235FC7C5006E3FA6 /* sprite.h */,
+				9286B682235FD373006E3FA6 /* globals.h */,
 			);
 			name = headers;
 			path = source/headers;
@@ -102,6 +130,7 @@
 				929B0709235F913C00F3C99A /* main.cpp */,
 				929B071A235FA10C00F3C99A /* game.cpp */,
 				929B071D235FA57300F3C99A /* input.cpp */,
+				9286B680235FC8E1006E3FA6 /* sprite.cpp */,
 			);
 			name = src;
 			path = source/src;
@@ -167,6 +196,7 @@
 				929B070A235F913C00F3C99A /* main.cpp in Sources */,
 				929B071E235FA57300F3C99A /* input.cpp in Sources */,
 				929B071B235FA10C00F3C99A /* game.cpp in Sources */,
+				9286B681235FC8E1006E3FA6 /* sprite.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

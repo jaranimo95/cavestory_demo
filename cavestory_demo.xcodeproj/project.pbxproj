@@ -48,6 +48,7 @@
 		9231D38E2360FB8700CCFB8C /* Map 1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Map 1.tmx"; sourceTree = "<group>"; };
 		9231D38F2360FC4200CCFB8C /* tile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tile.h; sourceTree = "<group>"; };
 		9231D3902360FCE800CCFB8C /* tile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tile.cpp; sourceTree = "<group>"; };
+		9231D392236139A100CCFB8C /* rectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rectangle.h; sourceTree = "<group>"; };
 		9286B67C235FB2C2006E3FA6 /* MyCharOpaque.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MyCharOpaque.png; sourceTree = "<group>"; };
 		9286B67D235FB44C006E3FA6 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
 		9286B67F235FC7C5006E3FA6 /* sprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sprite.h; sourceTree = "<group>"; };
@@ -172,6 +173,7 @@
 				9231D37C2360BD9C00CCFB8C /* player.h */,
 				9231D37E2360CA2200CCFB8C /* level.h */,
 				9231D38F2360FC4200CCFB8C /* tile.h */,
+				9231D392236139A100CCFB8C /* rectangle.h */,
 			);
 			name = headers;
 			path = source/headers;

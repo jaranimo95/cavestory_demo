@@ -55,6 +55,10 @@ void Game::gameLoop() {
 			this->_player.moveRight();
 		}
 		
+		if(input.wasKeyPressed(SDL_SCANCODE_Z) == true) {
+			this->_player.jump();
+		}
+		
 		if (!input.isKeyHeld(SDL_SCANCODE_LEFT) && !input.isKeyHeld(SDL_SCANCODE_RIGHT)) {
 			this->_player.stopMoving();
 		}

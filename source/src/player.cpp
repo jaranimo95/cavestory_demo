@@ -3,6 +3,8 @@
 
 namespace player_constants {
 	const float WALK_SPEED = 0.2f;
+	const float JUMP_SPEED = 0.7f;
+	
 	const char* CHAR_IMG = "./content/sprites/MyChar.png";
 	const float GRAVITY = 0.002f;
 	const float GRAVITY_CAP = 0.8f;
@@ -56,6 +58,15 @@ void Player::stopMoving() {
 	this->playAnimation(this->_facing == RIGHT ? "IdleRight" : "IdleLeft");
 }
 
+void Player::jump() {
+	
+	if(this->_grounded) {
+		this->_dy = 0;
+		this->_dy -= player_constants::JUMP_SPEED;
+		this->_grounded = false;
+	}
+}
+
 /* void handleTileCollisions
  * Handle all player collisions with tiles
  */
@@ -66,8 +77,13 @@ void Player::handleTileCollisions(std::vector<Rectangle> &others) {
 		if(collisionSide != sides::NONE) {
 			switch(collisionSide) {
 				case sides::TOP:
-					this->_y = others.at(i).getBottom();
 					this->_dy = 0;
+					this->_y = others.at(i).getBottom() + 1;
+					if(this->_grounded) {
+						this->stopMoving();
+						this->_dx = 0;
+						this->_x -= this->_facing == RIGHT ? 0.5f : -0.5f;
+					}
 					break;
 					
 				case sides::BOTTOM:

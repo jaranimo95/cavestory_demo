@@ -10,6 +10,8 @@
 		9231D378235FDEC200CCFB8C /* animatedsprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9231D377235FDEC200CCFB8C /* animatedsprite.cpp */; };
 		9231D37B2360BD8D00CCFB8C /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9231D3792360BD8D00CCFB8C /* player.cpp */; };
 		9231D3802360CE8800CCFB8C /* level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9231D37F2360CE8800CCFB8C /* level.cpp */; };
+		9231D3882360EE3B00CCFB8C /* tinyxml2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9231D3872360EE3B00CCFB8C /* tinyxml2.cpp */; };
+		9231D3912360FCE800CCFB8C /* tile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9231D3902360FCE800CCFB8C /* tile.cpp */; };
 		9286B67E235FB44C006E3FA6 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9286B67D235FB44C006E3FA6 /* SDL2_image.framework */; };
 		9286B681235FC8E1006E3FA6 /* sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9286B680235FC8E1006E3FA6 /* sprite.cpp */; };
 		929B070A235F913C00F3C99A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929B0709235F913C00F3C99A /* main.cpp */; };
@@ -39,6 +41,16 @@
 		9231D37F2360CE8800CCFB8C /* level.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = level.cpp; sourceTree = "<group>"; };
 		9231D3822360D3DD00CCFB8C /* bkBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkBlue.png; sourceTree = "<group>"; };
 		9231D3832360DD0200CCFB8C /* MyChar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MyChar.png; sourceTree = "<group>"; };
+		9231D3862360EBDD00CCFB8C /* PrtCave.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PrtCave.png; sourceTree = "<group>"; };
+		9231D3872360EE3B00CCFB8C /* tinyxml2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml2.cpp; sourceTree = "<group>"; };
+		9231D3892360EE4200CCFB8C /* tinyxml2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml2.h; sourceTree = "<group>"; };
+		9231D38D2360FA9C00CCFB8C /* PrtCave.tsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PrtCave.tsx; sourceTree = "<group>"; };
+		9231D38E2360FB8700CCFB8C /* Map 1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Map 1.tmx"; sourceTree = "<group>"; };
+		9231D38F2360FC4200CCFB8C /* tile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tile.h; sourceTree = "<group>"; };
+		9231D3902360FCE800CCFB8C /* tile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tile.cpp; sourceTree = "<group>"; };
+		9231D392236139A100CCFB8C /* rectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rectangle.h; sourceTree = "<group>"; };
+		9231D39323622E6700CCFB8C /* utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		9231D3942362303600CCFB8C /* slope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = slope.h; sourceTree = "<group>"; };
 		9286B67C235FB2C2006E3FA6 /* MyCharOpaque.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MyCharOpaque.png; sourceTree = "<group>"; };
 		9286B67D235FB44C006E3FA6 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
 		9286B67F235FC7C5006E3FA6 /* sprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sprite.h; sourceTree = "<group>"; };
@@ -77,9 +89,28 @@
 			path = backgrounds;
 			sourceTree = "<group>";
 		};
+		9231D3842360E31F00CCFB8C /* tilesets */ = {
+			isa = PBXGroup;
+			children = (
+				9231D38D2360FA9C00CCFB8C /* PrtCave.tsx */,
+				9231D3862360EBDD00CCFB8C /* PrtCave.png */,
+			);
+			path = tilesets;
+			sourceTree = "<group>";
+		};
+		9231D3852360E32700CCFB8C /* maps */ = {
+			isa = PBXGroup;
+			children = (
+				9231D38E2360FB8700CCFB8C /* Map 1.tmx */,
+			);
+			path = maps;
+			sourceTree = "<group>";
+		};
 		9286B67A235FB13D006E3FA6 /* content */ = {
 			isa = PBXGroup;
 			children = (
+				9231D3852360E32700CCFB8C /* maps */,
+				9231D3842360E31F00CCFB8C /* tilesets */,
 				9231D37D2360C9B200CCFB8C /* backgrounds */,
 				9286B67B235FB148006E3FA6 /* sprites */,
 			);
@@ -134,6 +165,7 @@
 		929B0714235F98D700F3C99A /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				9231D3892360EE4200CCFB8C /* tinyxml2.h */,
 				9286B682235FD373006E3FA6 /* globals.h */,
 				929B0717235F993B00F3C99A /* graphics.h */,
 				929B0719235FA03F00F3C99A /* game.h */,
@@ -142,6 +174,10 @@
 				9286B683235FDADC006E3FA6 /* animatedsprite.h */,
 				9231D37C2360BD9C00CCFB8C /* player.h */,
 				9231D37E2360CA2200CCFB8C /* level.h */,
+				9231D38F2360FC4200CCFB8C /* tile.h */,
+				9231D392236139A100CCFB8C /* rectangle.h */,
+				9231D39323622E6700CCFB8C /* utils.h */,
+				9231D3942362303600CCFB8C /* slope.h */,
 			);
 			name = headers;
 			path = source/headers;
@@ -150,6 +186,7 @@
 		929B0715235F98FD00F3C99A /* src */ = {
 			isa = PBXGroup;
 			children = (
+				9231D3872360EE3B00CCFB8C /* tinyxml2.cpp */,
 				929B0716235F993B00F3C99A /* graphics.cpp */,
 				929B0709235F913C00F3C99A /* main.cpp */,
 				929B071A235FA10C00F3C99A /* game.cpp */,
@@ -158,6 +195,7 @@
 				9231D377235FDEC200CCFB8C /* animatedsprite.cpp */,
 				9231D3792360BD8D00CCFB8C /* player.cpp */,
 				9231D37F2360CE8800CCFB8C /* level.cpp */,
+				9231D3902360FCE800CCFB8C /* tile.cpp */,
 			);
 			name = src;
 			path = source/src;
@@ -219,8 +257,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9231D3882360EE3B00CCFB8C /* tinyxml2.cpp in Sources */,
 				929B0718235F993B00F3C99A /* graphics.cpp in Sources */,
 				929B070A235F913C00F3C99A /* main.cpp in Sources */,
+				9231D3912360FCE800CCFB8C /* tile.cpp in Sources */,
 				9231D3802360CE8800CCFB8C /* level.cpp in Sources */,
 				929B071E235FA57300F3C99A /* input.cpp in Sources */,
 				9231D378235FDEC200CCFB8C /* animatedsprite.cpp in Sources */,

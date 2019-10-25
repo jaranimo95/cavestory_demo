@@ -7,6 +7,7 @@
 
 #include "globals.h"
 #include "sprite.h"
+#include "slope.h"
 
 class Graphics;
 

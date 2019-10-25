@@ -10,8 +10,8 @@ namespace player_constants {
 
 Player::Player() {}
 
-Player::Player(Graphics &graphics, float x, float y) :
-	AnimatedSprite(graphics, player_constants::CHAR_IMG, 0, 0, 16, 16, x, y, 100),
+Player::Player(Graphics &graphics, Vector2 spawnPoint) :
+	AnimatedSprite(graphics, player_constants::CHAR_IMG, 0, 0, 16, 16, spawnPoint.x, spawnPoint.y, 100),
 	_dx(0),
 	_dy(0),
 	_facing(RIGHT),
@@ -83,7 +83,31 @@ void Player::handleTileCollisions(std::vector<Rectangle> &others) {
 				case sides::RIGHT:
 					this->_x = others.at(i).getLeft() - this->_boundingBox.getWidth() - 1;
 					break;
+					
+				case sides::NONE:
+					break;
 			}
+		}
+	}
+}
+
+void Player::handleSlopeCollisions(std::vector<Slope> &others) {
+	for(int i = 0; i < others.size(); i++) {
+		//Calculate where on the slope the player's bottom center is touching
+		//and use y=mx+b to figure out the y position to place him at
+		//First calculate "b" (slope intercept) using one of the points (b=y-mx)
+		int b = ((others.at(i).getP1().y) - (others.at(i).getSlope() * fabs(others.at(i).getP1().x)));
+		
+		//Get player's center x
+		int centerX = this->_boundingBox.getCenterX();
+		
+		//Pass centerX into the y=mx+b to find y
+		int newY = (others.at(i).getSlope() * centerX) + b - 8; // 8 is a temp fix
+		
+		//Re-position the player to the correct "y"
+		if(this->_grounded) {
+			this->_y = newY - this->_boundingBox.getHeight();
+			this->_grounded = true;
 		}
 	}
 }
